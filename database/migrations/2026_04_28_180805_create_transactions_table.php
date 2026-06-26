@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
         $table->id();
         $table->foreignId('product_id')->constrained();
-        $table->foreignId('product_id')->constrained()->onDelete('cascade'); // Siapa yang menginput
         $table->enum('type', ['in', 'out']); // Masuk atau Keluar
         $table->integer('quantity');
         $table->date('date');
